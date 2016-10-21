@@ -1,0 +1,17 @@
+service: serverless-geckoboard-uptime
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  region: eu-west-1
+
+plugins:
+  - serverless-offline
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+         path: up
+         method: GET
